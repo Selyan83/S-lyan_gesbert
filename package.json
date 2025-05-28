@@ -1,0 +1,23 @@
+{
+  "name": "mountain-biking-webpage",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
+    "install-deps": "npm install tailwindcss@latest daisyui@latest"
+  },
+  "keywords": [
+    "vtt",
+    "mountain-biking"
+  ],
+  "author": "Sélyan",
+  "license": "ISC",
+  "description": "Site web personnel VTT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "daisyui": "^4.12.10"
+  }
+}
