@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS personnalisé VTT */
+/* CSS personnalisé VTT avec couleurs nature */
 :root {
-    --forest-green: #2d5016;
-    --moss-green: #4a7c59;
-    --trail-orange: #d2691e;
-    --dirt-yellow: #daa520;
-    --stone-gray: #696969;
-    --leaf-green: #90ee90;
+    --forest-green: #0f4c2c;       /* Vert forêt profond */
+    --moss-green: #4a7c59;         /* Vert mousse */
+    --trail-orange: #b8621b;       /* Orange sentier automnal */
+    --dirt-yellow: #c19a6b;        /* Jaune terre */
+    --stone-gray: #5a6b5b;         /* Gris pierre naturel */
+    --leaf-green: #7fb069;         /* Vert feuillage */
+    --earth-brown: #8b4513;        /* Brun terre */
+    --sky-blue: #87ceeb;           /* Bleu ciel naturel */
+    --bark-brown: #654321;         /* Brun écorce */
 }
 
 body {
@@ -47,7 +50,7 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(15, 76, 44, 0.15);
 }
 
 .btn {
@@ -61,24 +64,24 @@ body {
 .calc-btn {
     background: var(--stone-gray) !important;
     color: white !important;
-    border: 1px solid var(--trail-orange) !important;
+    border: 1px solid var(--earth-brown) !important;
     transition: all 0.2s ease;
 }
 
 .calc-btn:hover {
-    background: var(--trail-orange) !important;
+    background: var(--bark-brown) !important;
     transform: scale(1.05) !important;
 }
 
 .response-btn:hover {
-    background: rgba(74, 124, 89, 0.1) !important;
-    border-color: var(--trail-orange) !important;
+    background: rgba(127, 176, 105, 0.15) !important;
+    border-color: var(--earth-brown) !important;
     transform: translateY(-2px) !important;
 }
 
 .response-btn.btn-primary {
     background: var(--forest-green) !important;
-    border-color: var(--trail-orange) !important;
+    border-color: var(--earth-brown) !important;
     color: white !important;
 }
 
@@ -105,25 +108,68 @@ body {
 }
 
 .alert-success {
-    background: linear-gradient(135deg, var(--leaf-green), var(--moss-green)) !important;
+    background: linear-gradient(135deg, var(--leaf-green), var(--forest-green)) !important;
     color: white !important;
+    border: 1px solid var(--moss-green) !important;
 }
 
 .alert-warning {
     background: linear-gradient(135deg, var(--dirt-yellow), var(--trail-orange)) !important;
     color: white !important;
+    border: 1px solid var(--earth-brown) !important;
 }
 
 .alert-error {
-    background: linear-gradient(135deg, #dc2626, #991b1b) !important;
+    background: linear-gradient(135deg, #cd5c5c, var(--earth-brown)) !important;
     color: white !important;
+    border: 1px solid var(--bark-brown) !important;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, var(--sky-blue), var(--moss-green)) !important;
+    color: white !important;
+    border: 1px solid var(--stone-gray) !important;
 }
 
 #map {
-    border: 2px solid var(--moss-green) !important;
+    border: 2px solid var(--forest-green) !important;
     border-radius: 8px !important;
     height: 400px !important;
     width: 100% !important;
+}
+
+/* Couleurs nature pour les éléments de base */
+.btn-primary {
+    background: var(--forest-green) !important;
+    border-color: var(--earth-brown) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: var(--moss-green) !important;
+    border-color: var(--bark-brown) !important;
+}
+
+.btn-outline {
+    border-color: var(--forest-green) !important;
+    color: var(--forest-green) !important;
+}
+
+.btn-outline:hover {
+    background: var(--forest-green) !important;
+    color: white !important;
+}
+
+.text-primary {
+    color: var(--forest-green) !important;
+}
+
+.bg-success {
+    background: var(--leaf-green) !important;
+}
+
+.text-success-content {
+    color: white !important;
 }
 
 @media (max-width: 768px) {
