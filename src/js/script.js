@@ -212,7 +212,7 @@ function initQuiz() {
 
     if (!quizContainer || !checkButton) return;
     
-    
+    // Hide contact section initially
     if (contactSection) {
         contactSection.classList.add('hidden');
         contactSection.style.display = 'none';
@@ -278,29 +278,25 @@ function initQuiz() {
         });
 
         if (allCorrect) {
-            // Show success message first
-            quizResult.innerHTML = `<div class="alert alert-success">Parfait ! Toutes vos réponses sont correctes. Le formulaire de contact apparaît maintenant.</div>`;
+            // Show success message and redirect
+            quizResult.innerHTML = `
+                <div class="alert alert-success">
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                        <h3 class="font-bold">Parfait ! Toutes vos réponses sont correctes.</h3>
+                        <div class="text-sm opacity-90">Redirection vers la page de contact...</div>
+                    </div>
+                </div>
+            `;
             quizResult.classList.remove('hidden');
             
-            
+            // Redirect after 2 seconds
             setTimeout(() => {
-                if (contactSection) {
-                    contactSection.classList.remove('hidden');
-                    contactSection.style.display = 'block';
-                    contactSection.setAttribute('aria-hidden', 'false');
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 1000);
+                window.location.href = "A1_3_A2_2_A3_3.html";
+            }, 2000);
         } else {
             quizResult.innerHTML = `<div class="alert alert-error">Certaines de vos réponses sont incorrectes. Essayez à nouveau!</div>`;
             quizResult.classList.remove('hidden');
-            
-            
-            if (contactSection) {
-                contactSection.classList.add('hidden');
-                contactSection.style.display = 'none';
-                contactSection.setAttribute('aria-hidden', 'true');
-            }
         }
     });
     
