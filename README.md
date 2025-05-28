@@ -80,6 +80,7 @@ mountain-biking-webpage/
 │   │   ├── animations.js       # Animations et effets
 │   │   └── questionnaire.js    # Questions du quiz
 │   └── images/
+│       ├── forest-path.jpg     # Image de fond hero
 │       ├── image1.jpg          # Photos VTT
 │       ├── image2.jpg
 │       ├── image3.jpg
