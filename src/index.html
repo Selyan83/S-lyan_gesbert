@@ -172,3 +172,79 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Map Section -->
+        <section id="locations" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">Mes parcours favoris</h2>
+                
+                <div id="map" class="h-96 w-full rounded-lg mb-6"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="card card-compact bg-success text-success-content">
+                        <div class="card-body">
+                            <div class="text-2xl mb-2">🚵</div>
+                            <h3 class="card-title">Bois de L'Huisserie</h3>
+                            <p>Mon terrain d'entraînement favori avec des descentes techniques</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-compact bg-success text-success-content">
+                        <div class="card-body">
+                            <div class="text-2xl mb-2">🏁</div>
+                            <h3 class="card-title">Ancien terrain de BMX</h3>
+                            <p>Parfait pour travailler ma technique et mon explosivité</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-compact bg-success text-success-content">
+                        <div class="card-body">
+                            <div class="text-2xl mb-2">🏆</div>
+                            <h3 class="card-title">Championnat régional XCE</h3>
+                            <p>Le parcours de ma première victoire en 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Calculator Section -->
+        <section id="calculator" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">Calculatrice VTT</h2>
+                
+                <div class="max-w-md mx-auto">
+                    <div class="mb-4">
+                        <input type="text" id="calc-display" class="input input-bordered w-full text-right text-xl" readonly>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button class="btn btn-outline calc-btn" data-value="clear">C</button>
+                        <button class="btn btn-outline calc-btn" data-value="backspace">⌫</button>
+                        <button class="btn btn-outline calc-btn" data-value="%">%</button>
+                        <button class="btn btn-outline calc-btn" data-value="/">÷</button>
+                        
+                        <button class="btn btn-primary calc-btn" data-value="7">7</button>
+                        <button class="btn btn-primary calc-btn" data-value="8">8</button>
+                        <button class="btn btn-primary calc-btn" data-value="9">9</button>
+                        <button class="btn btn-outline calc-btn" data-value="*">×</button>
+                        
+                        <button class="btn btn-primary calc-btn" data-value="4">4</button>
+                        <button class="btn btn-primary calc-btn" data-value="5">5</button>
+                        <button class="btn btn-primary calc-btn" data-value="6">6</button>
+                        <button class="btn btn-outline calc-btn" data-value="-">-</button>
+                        
+                        <button class="btn btn-primary calc-btn" data-value="1">1</button>
+                        <button class="btn btn-primary calc-btn" data-value="2">2</button>
+                        <button class="btn btn-primary calc-btn" data-value="3">3</button>
+                        <button class="btn btn-outline calc-btn" data-value="+">+</button>
+                        
+                        <button class="btn btn-primary calc-btn col-span-2" data-value="0">0</button>
+                        <button class="btn btn-primary calc-btn" data-value=".">.</button>
+                        <button class="btn btn-primary calc-btn col-span-2" data-value="=">=</button>
+                    </div>
+                    <div class="mt-4 text-sm text-center opacity-70">
+                        Calculez des distances, dénivelés ou tout autre calcul utile pour vos sorties VTT
+                    </div>
+                </div>
+            </div>
+        </section>
