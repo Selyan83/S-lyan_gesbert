@@ -248,3 +248,105 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Quiz & Contact Section -->
+        <section id="quiz-contact" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">Me contacter</h2>
+                
+                <div class="max-w-2xl mx-auto">
+                    <p class="mb-6">Pour me contacter, veuillez d'abord répondre correctement aux questions suivantes sur le VTT. C'est une petite façon de vérifier votre intérêt pour ce sport!</p>
+                    
+                    <div id="quiz-container" class="space-y-6 bg-base-200 p-6 rounded-lg">
+                        <!-- Quiz questions will be inserted here via JavaScript -->
+                    </div>
+                    
+                    <div class="mt-6 flex justify-between">
+                        <button id="check-answers" class="btn btn-primary">Vérifier mes réponses</button>
+                        <button id="hack-button" class="btn btn-ghost btn-sm">
+                            Hack
+                            <span class="text-xs">(simple/double clic)</span>
+                        </button>
+                    </div>
+                    
+                    <div id="quiz-result" class="mt-4 hidden">
+                        <!-- Quiz results will appear here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Hidden Contact Form -->
+        <section id="contact" class="card bg-base-100 shadow-xl hidden" aria-hidden="true">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">Contact</h2>
+                
+                <div class="max-w-2xl mx-auto">
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="form-control">
+                                <label class="label"><span class="label-text">Nom</span></label>
+                                <input type="text" id="name" class="input input-bordered" required minlength="2">
+                                <label class="label"><span class="label-text-alt text-error hidden" id="name-error">Ce champ est requis (min 2 caractères)</span></label>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label"><span class="label-text">Email</span></label>
+                                <input type="email" id="email" class="input input-bordered" required>
+                                <label class="label"><span class="label-text-alt text-error hidden" id="email-error">Email invalide</span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label class="label"><span class="label-text">Sujet</span></label>
+                            <select id="subject" class="select select-bordered" required>
+                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                <option value="question">Question</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="parcours">Proposition de parcours</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <label class="label"><span class="label-text-alt text-error hidden" id="subject-error">Veuillez sélectionner un sujet</span></label>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label class="label"><span class="label-text">Message</span></label>
+                            <textarea id="message" class="textarea textarea-bordered h-24" required minlength="10"></textarea>
+                            <label class="label"><span class="label-text-alt text-error hidden" id="message-error">Votre message doit contenir au moins 10 caractères</span></label>
+                        </div>
+                        
+                        <div class="form-control mt-6">
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </div>
+                    </form>
+                    
+                    <div id="form-success" class="alert alert-success mt-4 hidden">
+                        <span>Message envoyé avec succès!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <div>
+            <div class="flex items-center justify-center mb-4">
+                <i class="fas fa-biking text-primary text-2xl mr-2"></i>
+                <span class="text-xl font-bold">VTT Passion</span>
+            </div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.instagram.com/selyan_vtt_/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://www.facebook.com/selya.gt/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="https://www.strava.com/athletes/65996435" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle">
+                    <i class="fab fa-strava text-xl"></i>
+                </a>
+            </div>
+            <div>
+                <p>&copy; 2025 VTT Passion. Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
