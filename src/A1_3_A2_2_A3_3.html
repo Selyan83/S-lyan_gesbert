@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - VTT Passion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="container mx-auto p-6 max-w-2xl">
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h1 class="card-title text-2xl justify-center">Contact VTT Passion</h1>
+                
+                <div class="alert alert-success mb-6">
+                    <span>✅ Quiz réussi ! Vous pouvez maintenant me contacter.</span>
+                </div>
+                
+                <form id="contact-form" class="space-y-4">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Nom</span></label>
+                        <input type="text" class="input input-bordered" required />
+                    </div>
+                    
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Email</span></label>
+                        <input type="email" class="input input-bordered" required />
+                    </div>
+                    
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Message</span></label>
+                        <textarea class="textarea textarea-bordered h-32" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+                </form>
+                
+                <a href="index.html" class="btn btn-outline w-full mt-4">Retour à l'accueil</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message envoyé ! (simulation)');
+        });
+    </script>
+</body>
+</html>
