@@ -1,50 +1,298 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - VTT Passion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/output.css">
 </head>
-<body>
-    <main class="container mx-auto p-6 max-w-2xl">
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h1 class="card-title text-2xl justify-center">Contact VTT Passion</h1>
-                
-                <div class="alert alert-success mb-6">
-                    <span>✅ Quiz réussi ! Vous pouvez maintenant me contacter.</span>
+<body class="min-h-screen" style="background: linear-gradient(135deg, var(--leaf-green), var(--moss-green));">
+    
+    <!-- Navigation avec retour -->
+    <div class="navbar bg-base-100 shadow-lg fixed top-0 z-50">
+        <div class="navbar-start">
+            <a href="index.html" class="btn btn-ghost">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Retour
+            </a>
+        </div>
+        <div class="navbar-center">
+            <span class="text-xl font-bold">
+                <i class="fas fa-biking text-primary mr-2"></i>
+                Contact VTT
+            </span>
+        </div>
+        <div class="navbar-end">
+            <label class="swap swap-rotate btn btn-ghost">
+                <input type="checkbox" id="theme-toggle" />
+                <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+                </svg>
+                <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+    <main class="container mx-auto p-6 max-w-4xl pt-24">
+        <!-- Message de félicitations -->
+        <div class="text-center mb-8">
+            <div class="alert alert-success max-w-2xl mx-auto">
+                <i class="fas fa-trophy text-2xl"></i>
+                <div>
+                    <h3 class="font-bold text-lg">Quiz réussi !</h3>
+                    <div class="text-sm opacity-90">Vous avez démontré vos connaissances en VTT. Je serais ravi d'échanger avec vous !</div>
                 </div>
-                
-                <form id="contact-form" class="space-y-4">
-                    <div class="form-control">
-                        <label class="label"><span class="label-text">Nom</span></label>
-                        <input type="text" class="input input-bordered" required />
-                    </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Formulaire de contact -->
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-2xl mb-6">
+                        <i class="fas fa-envelope text-primary"></i>
+                        Contactez-moi
+                    </h2>
                     
-                    <div class="form-control">
-                        <label class="label"><span class="label-text">Email</span></label>
-                        <input type="email" class="input input-bordered" required />
-                    </div>
+                    <form id="contact-form" class="space-y-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">
+                                    <i class="fas fa-user mr-2"></i>Nom complet
+                                </span>
+                            </label>
+                            <input type="text" id="name" name="name" class="input input-bordered" placeholder="Votre nom et prénom" required />
+                            <div id="name-error" class="label hidden">
+                                <span class="label-text-alt text-error">Le nom doit contenir au moins 2 caractères</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">
+                                    <i class="fas fa-at mr-2"></i>Email
+                                </span>
+                            </label>
+                            <input type="email" id="email" name="email" class="input input-bordered" placeholder="votre.email@exemple.com" required />
+                            <div id="email-error" class="label hidden">
+                                <span class="label-text-alt text-error">Veuillez entrer un email valide</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">
+                                    <i class="fas fa-tag mr-2"></i>Sujet
+                                </span>
+                            </label>
+                            <select id="subject" name="subject" class="select select-bordered" required>
+                                <option disabled selected>Choisissez un sujet</option>
+                                <option value="entrainement">Conseils d'entraînement</option>
+                                <option value="materiel">Matériel VTT</option>
+                                <option value="parcours">Parcours et spots</option>
+                                <option value="competition">Compétition XCE</option>
+                                <option value="collaboration">Collaboration/Partenariat</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <div id="subject-error" class="label hidden">
+                                <span class="label-text-alt text-error">Veuillez sélectionner un sujet</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">
+                                    <i class="fas fa-comment mr-2"></i>Message
+                                </span>
+                            </label>
+                            <textarea id="message" name="message" class="textarea textarea-bordered h-32" placeholder="Écrivez votre message ici... (minimum 10 caractères)" required></textarea>
+                            <div id="message-error" class="label hidden">
+                                <span class="label-text-alt text-error">Le message doit contenir au moins 10 caractères</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
                     
-                    <div class="form-control">
-                        <label class="label"><span class="label-text">Message</span></label>
-                        <textarea class="textarea textarea-bordered h-32" required></textarea>
+                    <div id="form-success" class="alert alert-success mt-4 hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</span>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary w-full">Envoyer</button>
-                </form>
-                
-                <a href="index.html" class="btn btn-outline w-full mt-4">Retour à l'accueil</a>
+                </div>
+            </div>
+
+            <!-- Informations de contact -->
+            <div class="space-y-6">
+                <!-- Réseaux sociaux -->
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-xl mb-4">
+                            <i class="fas fa-share-alt text-primary"></i>
+                            Suivez-moi
+                        </h3>
+                        
+                        <div class="space-y-3">
+                            <a href="https://www.instagram.com/selyan_vtt_/" target="_blank" rel="noopener noreferrer" class="btn btn-outline w-full justify-start">
+                                <i class="fab fa-instagram text-pink-500 text-xl mr-3"></i>
+                                <div class="text-left">
+                                    <div class="font-medium">Instagram</div>
+                                    <div class="text-sm opacity-70">@selyan_vtt_</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.facebook.com/selyan.gt/" target="_blank" rel="noopener noreferrer" class="btn btn-outline w-full justify-start">
+                                <i class="fab fa-facebook text-blue-600 text-xl mr-3"></i>
+                                <div class="text-left">
+                                    <div class="font-medium">Facebook</div>
+                                    <div class="text-sm opacity-70">Sélyan GT</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.strava.com/athletes/65996435" target="_blank" rel="noopener noreferrer" class="btn btn-outline w-full justify-start">
+                                <i class="fab fa-strava text-orange-600 text-xl mr-3"></i>
+                                <div class="text-left">
+                                    <div class="font-medium">Strava</div>
+                                    <div class="text-sm opacity-70">Mes performances</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations pratiques -->
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-xl mb-4">
+                            <i class="fas fa-info-circle text-primary"></i>
+                            À savoir
+                        </h3>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-success mr-3 mt-1"></i>
+                                <div>
+                                    <div class="font-medium">Temps de réponse</div>
+                                    <div class="opacity-70">24-48h en général</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-handshake text-success mr-3 mt-1"></i>
+                                <div>
+                                    <div class="font-medium">Collaborations</div>
+                                    <div class="opacity-70">Ouvert aux partenariats VTT</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-success mr-3 mt-1"></i>
+                                <div>
+                                    <div class="font-medium">Zone géographique</div>
+                                    <div class="opacity-70">Pays de la Loire principalement</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-trophy text-success mr-3 mt-1"></i>
+                                <div>
+                                    <div class="font-medium">Spécialité</div>
+                                    <div class="opacity-70">Cross-country et XCE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Citation -->
+                <div class="card bg-gradient-to-r from-primary to-secondary text-primary-content shadow-xl">
+                    <div class="card-body text-center">
+                        <div class="text-lg font-medium italic">
+                            "Le VTT c'est la liberté sur deux roues. Partageons cette passion ensemble !"
+                        </div>
+                        <div class="text-sm opacity-80 mt-2">- Sélyan</div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <script>
+        // Gestion du thème
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('change', () => {
+            html.setAttribute('data-theme', themeToggle.checked ? 'dark' : 'light');
+            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+        });
+        
+        // Charger le thème depuis localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
+
+        // Validation du formulaire
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Message envoyé ! (simulation)');
+            
+            const fields = {
+                name: document.getElementById('name'),
+                email: document.getElementById('email'),
+                subject: document.getElementById('subject'),
+                message: document.getElementById('message')
+            };
+            
+            let isValid = true;
+            
+            // Validation nom
+            if (!fields.name.value || fields.name.value.length < 2) {
+                document.getElementById('name-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('name-error').classList.add('hidden');
+            }
+            
+            // Validation email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(fields.email.value)) {
+                document.getElementById('email-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('email-error').classList.add('hidden');
+            }
+            
+            // Validation sujet
+            if (!fields.subject.value) {
+                document.getElementById('subject-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('subject-error').classList.add('hidden');
+            }
+            
+            // Validation message
+            if (!fields.message.value || fields.message.value.length < 10) {
+                document.getElementById('message-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('message-error').classList.add('hidden');
+            }
+            
+            if (isValid) {
+                document.getElementById('form-success').classList.remove('hidden');
+                this.reset();
+                
+                setTimeout(() => {
+                    document.getElementById('form-success').classList.add('hidden');
+                }, 5000);
+            }
         });
     </script>
 </body>
