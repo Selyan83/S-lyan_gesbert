@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS personnalisé VTT */
+:root {
+    --forest-green: #2d5016;
+    --moss-green: #4a7c59;
+    --trail-orange: #d2691e;
+    --dirt-yellow: #daa520;
+    --stone-gray: #696969;
+    --leaf-green: #90ee90;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 80px;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.hero-bg {
+    background-image: url('./images/forest-path.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.calc-btn {
+    background: var(--stone-gray) !important;
+    color: white !important;
+    border: 1px solid var(--trail-orange) !important;
+    transition: all 0.2s ease;
+}
+
+.calc-btn:hover {
+    background: var(--trail-orange) !important;
+    transform: scale(1.05) !important;
+}
+
+.response-btn:hover {
+    background: rgba(74, 124, 89, 0.1) !important;
+    border-color: var(--trail-orange) !important;
+    transform: translateY(-2px) !important;
+}
+
+.response-btn.btn-primary {
+    background: var(--forest-green) !important;
+    border-color: var(--trail-orange) !important;
+    color: white !important;
+}
+
+#contact.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+#contact:not(.hidden) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.alert {
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin: 1rem 0 !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, var(--leaf-green), var(--moss-green)) !important;
+    color: white !important;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, var(--dirt-yellow), var(--trail-orange)) !important;
+    color: white !important;
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #dc2626, #991b1b) !important;
+    color: white !important;
+}
+
+#map {
+    border: 2px solid var(--moss-green) !important;
+    border-radius: 8px !important;
+    height: 400px !important;
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .card:hover { 
+        transform: translateY(-3px); 
+    }
+    
+    .response-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
