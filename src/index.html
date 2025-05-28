@@ -350,3 +350,35 @@
             </div>
         </div>
     </footer>
+     <!-- Modal Viewer simplifié -->
+    <dialog id="modal-viewer" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <img id="modal-img" src="" alt="Agrandissement" class="w-full" />
+        </div>
+    </dialog>
+
+    <!-- Scripts essentiels uniquement -->
+    <script src="./js/questionnaire.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/script.js"></script>
+    
+    <script>
+        // Gestion du thème
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('change', () => {
+            html.setAttribute('data-theme', themeToggle.checked ? 'dark' : 'light');
+            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+        });
+        
+        // Charger le thème depuis localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
+    </script>
+</body>
+</html>
