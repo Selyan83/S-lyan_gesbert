@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passion for Mountain Biking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+    <!-- Navigation avec DaisyUI -->
+    <div class="navbar bg-base-100 shadow-lg fixed top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#about-details">À propos</a></li>
+                    <li><a href="#locations">Parcours</a></li>
+                    <li><a href="#calculator">Calculatrice</a></li>
+                    <li><a href="#quiz-contact">Contact</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl">
+                <i class="fas fa-biking text-primary mr-2"></i>
+                VTT Passion
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#about-details">À propos</a></li>
+                <li><a href="#locations">Parcours</a></li>
+                <li><a href="#calculator">Calculatrice</a></li>
+                <li><a href="#quiz-contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <label class="swap swap-rotate btn btn-ghost">
+                <input type="checkbox" id="theme-toggle" />
+                <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+                </svg>
+                <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen hero-bg">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Passion pour le VTT</h1>
+                <p class="mb-5">Découvrez mon parcours et ma passion pour le cross-country</p>
+                <a href="#about-details" class="btn btn-primary">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reste du contenu -->
+    <main class="container mx-auto p-4 space-y-8">
+        <!-- Introduction Section -->
+        <section id="about" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl">Mon parcours</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/3">
+                        <figure><img src="./images/image1.jpg" alt="Coureur VTT" class="rounded-lg w-full" /></figure>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <p class="mb-4">Depuis mon plus jeune âge, le vélo fait partie de ma vie. Du BMX à mes débuts jusqu'au VTT aujourd'hui, cette passion n'a cessé de grandir.</p>
+                        <p class="mb-4">Depuis cinq ans, je me consacre au VTT cross-country, et plus particulièrement au XCE, une discipline intense et technique dans laquelle je m'épanouis pleinement.</p>
+                        <div class="alert alert-success">
+                            <i class="fas fa-quote-left"></i>
+                            <span>"Membre du team DN1 de mon club, je m'entraîne avec rigueur pour progresser au niveau national. À travers cette page, je partage mes terrains préférés, mes meilleurs souvenirs, mais surtout, l'esprit de persévérance et de passion qui m'anime à chaque coup de pédale."</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">Galerie de VTT</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card card-compact bg-base-100 shadow-md">
+                        <figure><img src="./images/image1.jpg" alt="VTT en action" class="h-64 w-full object-cover" /></figure>
+                        <div class="card-body">
+                            <h3 class="card-title">Ma première victoire</h3>
+                            <p>Une journée gravée dans ma mémoire : celle de ma première victoire, celle où tout le travail a enfin payé.</p>
+                        </div>
+                    </div>
+                    <div class="card card-compact bg-base-100 shadow-md">
+                        <figure><img src="./images/image2.jpg" alt="Paysage VTT" class="h-64 w-full object-cover" /></figure>
+                        <div class="card-body">
+                            <h3 class="card-title">Course régionale</h3>
+                            <p>Cette course régionale restera l'une de mes plus belles performances mentales. Partir en arrière et tout donner pour remonter.</p>
+                        </div>
+                    </div>
+                    <div class="card card-compact bg-base-100 shadow-md">
+                        <figure><img src="./images/image3.jpg" alt="Podium VTT" class="h-64 w-full object-cover" /></figure>
+                        <div class="card-body">
+                            <h3 class="card-title">Sur le podium</h3>
+                            <p>Monter sur le podium, c'est toujours une fierté. Cette 2e place me rappelle que rien n'est jamais acquis et que la régularité est essentielle.</p>
+                        </div>
+                    </div>
+                    <div class="card card-compact bg-base-100 shadow-md">
+                        <figure><img src="./images/image4.jpg" alt="Montagne VTT" class="h-64 w-full object-cover" /></figure>
+                        <div class="card-body">
+                            <h3 class="card-title">Randonnée en montagne</h3>
+                            <p>Randonnée VTT en haute montagne avec une vue spectaculaire sur mes "Alpes" 😅😀.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- À propos Section -->
+        <section id="about-details" class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl justify-center">À propos de ma passion</h2>
+                
+                <div class="space-y-4">
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div class="collapse-title text-xl font-medium">
+                            Pourquoi le VTT ?
+                        </div>
+                        <div class="collapse-content">
+                            <p>Depuis tout petit, le vélo a toujours fait partie de ma vie. J'ai commencé par le BMX, attiré par les sensations et la liberté qu'il offre. Il y a environ cinq ans, je me suis tourné vers le VTT, d'abord au sein du club de ma ville, puis en intégrant, il y a un an, le team DN1 de ce même club — une opportunité incroyable que je mesure chaque jour.</p>
+                            <p class="mt-3">Ce que j'aime dans le VTT, c'est explorer des sentiers toujours plus beaux, chercher la meilleure trajectoire, optimiser chaque virage pour aller plus vite. C'est un sport qui demande rigueur, technique et passion. Aujourd'hui, je le pratique à un niveau national, avec un entraînement régulier et une envie constante de progresser.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="my-accordion-3" />
+                        <div class="collapse-title text-xl font-medium">
+                            Mes terrains préférés
+                        </div>
+                        <div class="collapse-content">
+                            <p>Mon terrain d'entraînement préféré, c'est sans hésiter le bois de l'Huisserie, dans ma ville. C'est un spot idéal pour le VTT, surtout pour ma discipline, le XCE (cross-country eliminator), que je pratique depuis que j'ai intégré la team DN1.</p>
+                            <p class="mt-3">Ce bois offre un mélange parfait : des descentes techniques, des montées longues et exigeantes, comme la fameuse côte de Pierre. Elle n'est pas très longue, mais elle est redoutable avec ses nombreuses pierres qui demandent une vraie maîtrise technique.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse collapse-plus bg-base-200">
+                        <input type="radio" name="my-accordion-3" />
+                        <div class="collapse-title text-xl font-medium">
+                            Mon plus beau souvenir
+                        </div>
+                        <div class="collapse-content">
+                            <p>Mon plus beau souvenir en VTT, c'est sans hésiter ma victoire au championnat régional de XCE en 2024. C'était ma toute première victoire, et tout s'est déroulé de manière presque parfaite ce jour-là. C'est un moment fort, gravé dans ma mémoire, qui symbolise l'aboutissement de beaucoup d'heures d'entraînement et de sacrifices.</p>
+                            <p class="mt-3">J'aime aussi les moments partagés avec ma team, notamment lors des manches de Coupe de France. Même si je n'ai pas encore réussi à franchir le cap des huitièmes de finale, ces expériences restent très riches, autant humainement que sportivement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
